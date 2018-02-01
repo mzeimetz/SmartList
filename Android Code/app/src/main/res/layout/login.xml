@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.eis.marcuszeimetz.smarteliste.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="361dp"
+        android:layout_height="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/EditPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:srcCompat="@drawable/beacon" />
+
+    <EditText
+        android:id="@+id/EditMail"
+        android:layout_width="275dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/sunnyBlue"
+        android:hint="GMID"
+        android:inputType="textPersonName"
+        android:textAlignment="textStart"
+        android:textColorHint="@color/grau"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/EditPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/EditPassword"
+        android:layout_width="271dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="32dp"
+        android:hint="Passwort"
+        android:inputType="textPassword"
+        android:textColorHint="@color/grau"
+        android:textSize="14sp"
+        android:backgroundTint="@color/sunnyBlue"
+        app:layout_constraintBottom_toTopOf="@+id/btnlogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditMail" />
+
+    <Button
+        android:id="@+id/btnlogin"
+        android:layout_width="286dp"
+        android:layout_height="49dp"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditPassword" />
+
+    <TextView
+        android:id="@+id/txterror"
+        android:layout_width="255dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:textAlignment="center"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/btnlogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditPassword" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="287dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:text="Impressum"
+        android:textSize="10sp"
+        android:textColor="@color/grau"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnlogin"
+        app:layout_constraintVertical_bias="0.52" />
+
+</android.support.constraint.ConstraintLayout>
