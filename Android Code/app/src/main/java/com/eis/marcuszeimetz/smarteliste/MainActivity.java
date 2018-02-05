@@ -249,6 +249,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Beacon Symbolisiert den CGA Praktikumsraum
                 if (Major == 51635 &&  Minor == 14196) {
+                    //checkTodayReportCards(user_id,cookie,"CGA");
                     checkTodayReportCards(user_id,cookie,"CGA");
 
 
@@ -273,6 +274,8 @@ public class MainActivity extends AppCompatActivity {
                 labwork.setText("...");
                 lesson.setText("...");
                 room.setText("...");
+                txtPogress.setText("...");
+                progressBar.setProgress(0);
 
 
 /*
@@ -369,6 +372,49 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    //*************************Demo Handler*******************************************************
+
+                /*
+               // result.put(result.length() + 1);
+
+
+                JSONObject obj = new JSONObject();
+                JSONObject objlabwork = new JSONObject();
+                JSONObject objroom = new JSONObject();
+
+
+
+                try {
+
+                    objlabwork.put("label","WPF IoT");
+                    objlabwork.put("id","WPF IoT");
+
+                    objroom.put("label","R 3.209");
+                    objroom.put("description","Moxd Labor");
+
+
+                    obj.put("label","Vorführung der Projekte");
+                    obj.put("date","2017-11-13");
+                    obj.put("start","17:00:00.000");
+                    obj.put("end","19:00:00.000");
+                    obj.put("labwork",objlabwork);
+                    obj.put("room",objroom);
+
+
+
+                    result.put(obj);
+
+
+                } catch (JSONException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+
+
+*/
+     //********************************************************************************
+
 
                 JSONArray jbo = result;
 
@@ -453,10 +499,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if (nomatches == jbo.length() ) {
 
+                    /*
                     temp.put(FIRST_COLUMN_Route, "Keine Treffer!" );
                     list.add(temp);
                     ListViewAdapter adapter = new ListViewAdapter(MainActivity.this, list, 0);
                     mDrawerList.setAdapter(adapter);
+                    */
 
                 } else {
                     try {
@@ -476,13 +524,13 @@ public class MainActivity extends AppCompatActivity {
 
 
                        // 1 Minute warten um sicherzustellen, dass die Person als Anwesend sichtbar wird!
-                          new CountDownTimer(50000, 1000) {
+                          new CountDownTimer(11000, 1000) {
 
                             public void onTick(long millisUntilFinished) {
 
                                 progressStatus++;
                                 progressBar.setProgress(progressStatus);
-                                txtPogress.setText(progressStatus+"/"+progressBar.getMax());
+                                //txtPogress.setText(progressStatus+"/"+progressBar.getMax());
                                 if (i == 0) {
                                     this.cancel();
                                 }
@@ -492,16 +540,17 @@ public class MainActivity extends AppCompatActivity {
 
                             public void onFinish() {
                                 publishToLocalView(1);
+                                txtPogress.setText("Status: 'Anwesend im Raum'");
 
 
                                 // Nach weiteren 4 Minuten ist sichergestellt, dass die Person auch über das ADV Tool als "Anwesend" ist!
-                                new CountDownTimer(50000, 1000) {
+                                new CountDownTimer(11000, 1000) {
 
                                     public void onTick(long millisUntilFinished) {
 
                                         progressStatus++;
                                         progressBar.setProgress(progressStatus);
-                                        txtPogress.setText(progressStatus+"/"+progressBar.getMax());
+                                        //.setText(progressStatus+"/"+progressBar.getMax());
 
                                         if (i == 0) {
                                             this.cancel();
@@ -517,6 +566,8 @@ public class MainActivity extends AppCompatActivity {
                                         } catch (JSONException e) {
                                             e.printStackTrace();
                                         }
+
+                                        txtPogress.setText("Status: 'Anwesend im Termin'");
 
 
                                     }
